@@ -29,6 +29,7 @@ const LoginPage = () => {
     if (res.error) return setError(res.error)
 
     router.push('/dashboard')
+    router.refresh()
   })
 
   return (
