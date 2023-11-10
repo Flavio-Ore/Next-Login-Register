@@ -40,11 +40,16 @@ const authOptions: AuthOptions = {
             email: userFound.email
           } as any
         } catch (error) {
+          console.log('error :>> ', error)
           throw new Error(error.message)
         }
       }
     })
-  ]
+  ],
+  pages: {
+    signIn: '/auth/login'
+  },
+  secret: process.env.JWT_SECRET
 }
 
 const handler = NextAuth(authOptions)
